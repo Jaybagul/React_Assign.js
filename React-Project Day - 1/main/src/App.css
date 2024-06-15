@@ -1,0 +1,41 @@
+/* Navbar styling */
+.navbar {
+    transition: background-color 0.5s, color 0.5s;
+  }
+  
+  .navbar .nav-link {
+    transition: color 0.5s;
+  }
+  
+  .navbar-brand img {
+    transition: filter 0.5s;
+  }
+  
+  /* Dark mode styles */
+  body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  body.dark-mode .navbar {
+    background-color: #1f1f1f;
+  }
+  
+  body.dark-mode .navbar .nav-link {
+    color: #ffffff;
+  }
+  
+  body.dark-mode .navbar-brand img {
+    filter: invert(1);
+  }
+  
+  body.dark-mode .btn-dark {
+    background-color: #ffffff;
+    color: #121212;
+    border: none;
+  }
+  
+  body.dark-mode .btn-dark:hover {
+    background-color: #f1f1f1;
+  }
+  
