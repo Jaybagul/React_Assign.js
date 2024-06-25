@@ -1,0 +1,7 @@
+body{
+    background-color: lightslategray;
+}
+.card:hover{
+    transition: 0.6s;
+    background-color: antiquewhite;
+}
