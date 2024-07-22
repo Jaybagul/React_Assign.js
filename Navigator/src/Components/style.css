@@ -1,0 +1,568 @@
+.welcome-container {
+  background-image: url("");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ), url('https://images.unsplash.com/photo-1524275539700-cf51138f679b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .welcome-message {
+    max-width: 600px;
+  }
+  
+  .animated-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    animation: fadeInDown 1.5s ease-in-out;
+  }
+  
+  .animated-description {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    animation: fadeInUp 1.5s ease-in-out;
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+.about-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #007bff;
+    animation: fadeInDown 1.5s ease-in-out;
+  }
+  
+  .about-description {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    animation: fadeInUp 1.5s ease-in-out;
+  }
+  
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .category {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    width: 250px;
+  }
+  
+  .category:hover {
+    transform: scale(1.05);
+  }
+  
+  .category-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .category-title {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin: 15px 0;
+  }
+  
+  .category-description {
+    font-size: 1rem;
+    padding: 0 10px 20px;
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+    
+.mens-clothing-container {
+  text-align: center;
+  padding: 50px;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.mens-clothing-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #007bff;
+  animation: fadeInDown 1.5s ease-in-out;
+  font-family: 'Arial', sans-serif;
+}
+
+.mens-clothing-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mens-clothing-image {
+  width: 500px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.mens-clothing-image:hover {
+  transform: scale(1.05);
+}
+
+.mens-clothing-text {
+  max-width: 700px;
+  text-align: left;
+  animation: fadeInUp 1.5s ease-in-out;
+  font-family: 'Georgia', serif;
+}
+
+.mens-clothing-text p {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.mens-clothing-text ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.mens-clothing-text ul li {
+  margin-bottom: 10px;
+  font-family: 'Georgia', serif;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.womens-clothing-container {
+  text-align: center;
+  padding: 50px;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.womens-clothing-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #e83e8c;
+  animation: fadeInDown 1.5s ease-in-out;
+  font-family: 'Arial', sans-serif;
+}
+
+.womens-clothing-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.womens-clothing-image {
+  width: 500px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.womens-clothing-image:hover {
+  transform: scale(1.05);
+}
+
+.womens-clothing-text {
+  max-width: 700px;
+  text-align: left;
+  animation: fadeInUp 1.5s ease-in-out;
+  font-family: 'Georgia', serif;
+}
+
+.womens-clothing-text p {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.womens-clothing-text ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.womens-clothing-text ul li {
+  margin-bottom: 10px;
+  font-family: 'Georgia', serif;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.jewelry-container {
+  text-align: center;
+  padding: 50px;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.jewelry-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffc107; /* Yellow color for a luxurious feel */
+  animation: fadeInDown 1.5s ease-in-out;
+  font-family: 'Arial', sans-serif;
+}
+
+.jewelry-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.jewelry-image {
+  width: 500px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.jewelry-image:hover {
+  transform: scale(1.05);
+}
+
+.jewelry-text {
+  max-width: 700px;
+  text-align: left;
+  animation: fadeInUp 1.5s ease-in-out;
+  font-family: 'Georgia', serif;
+}
+
+.jewelry-text p {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.jewelry-text ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.jewelry-text ul li {
+  margin-bottom: 10px;
+  font-family: 'Georgia', serif;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.electronics-container {
+  text-align: center;
+  padding: 50px;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.electronics-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #17a2b8; /* Blue color for a tech feel */
+  animation: fadeInDown 1.5s ease-in-out;
+  font-family: 'Arial', sans-serif;
+}
+
+.electronics-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.electronics-image {
+  width: 500px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.electronics-image:hover {
+  transform: scale(1.05);
+}
+
+.electronics-text {
+  max-width: 700px;
+  text-align: left;
+  animation: fadeInUp 1.5s ease-in-out;
+  font-family: 'Georgia', serif;
+}
+
+.electronics-text p {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.electronics-text ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.electronics-text ul li {
+  margin-bottom: 10px;
+  font-family: 'Georgia', serif;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* login page css section */
+.login-container {
+  border-radius: 25px;
+  border: 1px solid grey;
+  overflow: hidden;
+
+}
+.login-card {
+  border-radius: 25px;
+  padding: 55px;
+  background-color: #fff;
+}
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  border-radius: 25px;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+}/* Components/Products.css */
+.container {
+  margin-top: 5rem;
+}
+
+.card {
+  border: none; /* Remove default card border */
+  border-radius: 15px; /* Rounded corners */
+  overflow: hidden; /* Hide overflow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation for hover effect */
+}
+
+.card-img-top {
+  width: 100%; /* Full width */
+  height: 200px; /* Fixed height */
+  object-fit: cover; /* Cover the container while preserving aspect ratio */
+}
+
+.card-body {
+  padding: 1.5rem; /* Add padding inside the card body */
+}
+
+.card-title {
+  font-size: 1.25rem; /* Slightly larger font size for the title */
+  font-weight: bold; /* Bold title */
+  margin-bottom: 1rem; /* Space below title */
+}
+
+.card-text {
+  font-size: 0.9rem; /* Slightly smaller font size for the description */
+  color: #555; /* Dark gray color for the text */
+}
+
+.card-text strong {
+  color: #333; /* Darker color for the price */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Blue color for the button */
+  border: none;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue for hover effect */
+}
+
+/* Animation for card title and text */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-title,
+.card-text {
+  animation: fadeInUp 1s ease-out;
+}
