@@ -34,25 +34,59 @@ const AddProduct = () => {
 
   return (
     <>
-      <div className="container ">
-        <div className="row justify-content-center">
-          <h4>Add Pitch</h4>
-          <form className="form-group" onSubmit={(e) => handlesubmit(e)}>
-            <input className="u-full-width" type="text" name='image' value={image} placeholder='image' onChange={(e) => handlechange(e)} /> <br />
-            <input className="u-full-width" type="text" name='title' value={title} placeholder='title' onChange={(e) => handlechange(e)} /><br />
-            <select name="category" value={category} className="u-full-width" onChange={(e) => handlechange(e)}>
-              <option value="">select your category</option>
-              <option value="">mens clothing</option>
-              <option value="">womens clothing</option>
-              <option value="">jewllery</option>
-              <option value="">electronics</option>
-            </select>
-            <input className="u-full-width" type="text" name='price' value={price} placeholder='price' onChange={(e) => handlechange(e)} /><br />
-            <input className="u-full-width" type="text" name="description" value={description} placeholder='description' onChange={(e) => handlechange(e)} />
-            <br />  <input type="submit" className="u-full-width button button-primary" />
-          </form>
-
-          <hr />
+      <div className="container-fluid pt-5 d-flex align-items-center justify-content-center min-vh-100">
+        <div className="row w-100 justify-content-center">
+          <div className="col-md-6">
+            <h4 className="text-center mb-4 animate-title">Add Product</h4>
+            <form className="form-group text-center animate-form" onSubmit={handlesubmit}>
+              <input
+                className="form-control mb-3"
+                type="text"
+                name="image"
+                value={image}
+                placeholder="Image"
+                onChange={handlechange}
+              />
+              <input
+                className="form-control mb-3"
+                type="text"
+                name="title"
+                value={title}
+                placeholder="Title"
+                onChange={handlechange}
+              />
+              <select
+                name="category"
+                value={category}
+                className="form-control mb-3"
+                onChange={handlechange}
+              >
+                <option value="">Select your category</option>
+                <option value="mens clothing">Men's Clothing</option>
+                <option value="womens clothing">Women's Clothing</option>
+                <option value="jewelry">Jewelry</option>
+                <option value="electronics">Electronics</option>
+              </select>
+              <input
+                className="form-control mb-3"
+                type="text"
+                name="price"
+                value={price}
+                placeholder="Price"
+                onChange={handlechange}
+              />
+              <input
+                className="form-control mb-3"
+                type="text"
+                name="description"
+                value={description}
+                placeholder="Description"
+                onChange={handlechange}
+              />
+              <input type="submit" className="btn btn-primary w-100" value="Add Product" />
+            </form>
+            <hr />
+          </div>
         </div>
       </div>
 

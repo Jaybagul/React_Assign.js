@@ -1,70 +1,113 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import AddProduct from './AddProduct'
-import EditProduct from './EditProduct'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import DeleteProduct from './DeleteProduct';
 
 const ProductList = () => {
 
-  const [value, setValue] = useState([])
-  const [category, setCategory] = useState('electronics')
+  const [value, setValue] = useState([]);
+  const [category, setCategory] = useState('electronics');
+  const [order, setOrder] = useState("asc");
+  const [page, setPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState('');
 
-  const setCategorydata = (e) => {
-    setCategory(e.target.value)
-  }
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
 
-  const Fetchdata = () => {
-    axios.get(`http://localhost:3002/posts?category=${category}`)
+  const setCategoryData = (e) => {
+    setCategory(e.target.value);
+  };
+
+  const highToLow = () => {
+    setOrder("asc");
+  };
+
+  const lowToHigh = () => {
+    setOrder("desc");
+  };
+
+  const fetchData = () => {
+    axios.get(`http://localhost:3002/posts?_page=${page}&_limit=6`, {
+      params: {
+        _sort: "price",
+        _order: order,
+        category: category,
+        q: searchTerm
+      }
+    })
       .then((res) => {
-        setValue(res.data)
+        setValue(res.data);
       })
-      .catch((Err) => console.log(Err))
-  }
+      .catch((err) => console.log(err));
+  };
 
   useEffect(() => {
-    Fetchdata()
-  }, [category])  // Added category to the dependency array
+    fetchData();
+  }, [category, order, page]);
 
   return (
     <>
-      <div className="container-fluid mt-3 pt-5 ">
+      <div className="container-fluid mt-3 pt-5">
         <div className="row m-0">
-          <div className="col-3">
-            <AddProduct />
-
-          </div>
-          <div className="col-9">
-            <div>
-              <select name="" id="" onChange={setCategorydata}>
+          <div className="col-10 m-auto">
+            <div className="main d-flex" style={{ justifyContent: "space-around" }}>
+              <input
+                type="text"
+                className="form-control mb-3"
+                placeholder="Search products..."
+                value={searchTerm}
+                onChange={handleSearchChange}
+                style={{ width: "35%" }}
+              />
+              <select className='form-control mb-3 animated-select ms-2' onChange={setCategoryData}>
                 <option value="">Select your category</option>
                 <option value="men's clothing">Men's clothing</option>
                 <option value="jewelry">Jewelry</option>
                 <option value="electronics">Electronics</option>
                 <option value="women's clothing">Women's clothing</option>
               </select>
+              <div className="div" style={{ display: 'flex', justifyContent: "space-around", alignContent: 'center', width: '30%' }}>
+                <button onClick={highToLow} style={{ width: "50%", height: '42px', margin: '1%' }} className='btn btn-primary'>High to Low</button>
+                <button onClick={lowToHigh} style={{ width: "50%", height: '42px', margin: "1%" }} className='btn btn-primary'>Low to High</button>
+              </div>
             </div>
             <div className="row pt-5">
-              {value.map((product) => (
-                <div key={product.id} className="col-md-4 mb-4">
-                  <div className="card" style={{ width: "20rem" }}>
-                    <img src={product.image} className="card-img-top d-block w-100" alt={product.title} />
-                    <div className="card-body">
-                      <h5 className="card-title">{product.title}</h5>
-                      <p className="card-text">{product.description}</p>
-                      <h6>{product.category}</h6>
-                      <p className="card-text"><strong>${product.price}</strong></p>
-                      <button className='btn text-center'><Link to={`/editproduct/${product.id}`}>Edit</Link></button>
-                      <button className='btn text-center'>Delete</button>
+              <div className="container">
+                <div className="row">
+                  {value.map((product) => (
+                    <div key={product.id} className="col-md-4 mb-4">
+                      <div className="card h-100">
+                        <Link to={`/singlepage/${product.id}`}>
+                          <img src={product.image} className="card-img-top" alt={product.title} />
+                        </Link>
+                        <div className="card-body d-flex flex-column">
+                          <h5 className="card-title">{product.title}</h5>
+                          <p className="card-text">{product.description.substring(0, 50)}</p>
+                          <h6>{product.category}</h6>
+                          <p className="card-text"><strong>${product.price}</strong></p>
+                          <div className="mt-auto">
+                            <button className='btn btn-primary me-2'>
+                              <Link to={`/editproduct/${product.id}`} className="text-white text-decoration-none">Edit</Link>
+                            </button>
+                            <DeleteProduct productId={product.id} fetchData={fetchData} />
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
+        <div className='text-center'>
+          <button className='btn btn-primary me-2' disabled={page === 1} onClick={() => setPage(page - 1)} style={{ width: '7%' }}>Prev</button> {page}
+          <button className='btn btn-primary ms-2' onClick={() => setPage(page + 1)} style={{ width: '7%' }}>Next</button>
+        </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default ProductList
+export default ProductList;
