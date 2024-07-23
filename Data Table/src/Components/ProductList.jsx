@@ -91,6 +91,7 @@ const ProductList = () => {
                               <Link to={`/editproduct/${product.id}`} className="text-white text-decoration-none">Edit</Link>
                             </button>
                             <DeleteProduct productId={product.id} fetchData={fetchData} />
+                            
                           </div>
                         </div>
                       </div>
