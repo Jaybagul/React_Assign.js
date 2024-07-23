@@ -1,15 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react'
 import './App.css'
-import AddProduct from './Components/AddProduct';
+import ProductList from './Components/ProductList'
+import "./Components/style.css"
+import All from './Components/All'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-      <AddProduct />
+
+
+      <All />
+
     </>
   )
 }

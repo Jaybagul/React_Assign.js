@@ -1,45 +1,64 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import axios from 'axios';
+import React, { useState } from 'react';
+
+const intialvalue = {
+  image: '',
+  title: '',
+  category: '',
+  price: '',
+  description: ''
+
+}
 
 const AddProduct = () => {
+  const [formdata, setformdata] = useState(intialvalue)
 
-  const [value, setValue] = useState([])
 
-  const Fetchdata = () => {
-    axios.get("http://localhost:3000/posts")
-      .then((res) => {
-        setValue(res.data)
-      })
-      .catch((Err) => console.log(Err))
+  const handlechange = (e) => {
+
+    setformdata({ ...formdata, [e.target.name]: e.target.value })
+
   }
 
-  useEffect(() => {
-    Fetchdata()
-  }, [])
+  const { image, title, category, price, description } = formdata
+
+  const handlesubmit = (e) => {
+    e.preventDefault()
+
+    axios.post("http://localhost:3002/posts", formdata).
+      then((res) =>
+        console.log(res)).catch((Error) => console.log(Error))
+
+  }
+
 
   return (
     <>
-      <div className="container mt-5" style={{ width: "90%", margin: 'auto' }}>
-        <div className="row">
-          {value.map((product) => (
-            <div key={product.id} className="col-md-4 mb-4">
+      <div className="container ">
+        <div className="row justify-content-center">
+          <h4>Add Pitch</h4>
+          <form className="form-group" onSubmit={(e) => handlesubmit(e)}>
+            <input className="u-full-width" type="text" name='image' value={image} placeholder='image' onChange={(e) => handlechange(e)} /> <br />
+            <input className="u-full-width" type="text" name='title' value={title} placeholder='title' onChange={(e) => handlechange(e)} /><br />
+            <select name="category" value={category} className="u-full-width" onChange={(e) => handlechange(e)}>
+              <option value="">select your category</option>
+              <option value="">mens clothing</option>
+              <option value="">womens clothing</option>
+              <option value="">jewllery</option>
+              <option value="">electronics</option>
+            </select>
+            <input className="u-full-width" type="text" name='price' value={price} placeholder='price' onChange={(e) => handlechange(e)} /><br />
+            <input className="u-full-width" type="text" name="description" value={description} placeholder='description' onChange={(e) => handlechange(e)} />
+            <br />  <input type="submit" className="u-full-width button button-primary" />
+          </form>
 
-              <div className="card" style={{ width: "20rem" }}>
-                <img src={product.image} className="card-img-top d-block w-100" alt={product.title} />
-                <div className="card-body">
-                  <h5 className="card-title">{product.title}</h5>
-                  <p className="card-text">{product.description.substring(0, 95)}</p>
-                  <p className="card-text"><strong>${product.price}</strong></p>
-                  <a href="#" className="btn btn-primary">View Details</a>
-                </div>
-              </div>
-
-            </div>
-          ))}
+          <hr />
         </div>
       </div>
+
+      <hr />
     </>
-  )
+  );
 }
 
-export default AddProduct
+export default AddProduct;
