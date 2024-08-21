@@ -1,0 +1,109 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .login-form {
+   background-image: url('https://media.geeksforgeeks.org/wp-content/uploads/20210723050322/Lineargradient2-660x322.png');
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .login-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 28px;
+  }
+  
+  .login-form p {
+    margin-bottom: 30px;
+    color: #777;
+    font-size: 16px;
+  }
+  
+  .login-form input[type="email"],
+  .login-form input[type="password"],
+  .login-form .google-btn,
+  .login-form .submit-btn {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .login-form input[type="email"]:focus,
+  .login-form input[type="password"]:focus {
+    border-color: #764ba2;
+    box-shadow: 0 0 8px rgba(118, 75, 162, 0.2);
+  }
+  
+  .password-container {
+    position: relative;
+  }
+  
+  .toggle-password-btn {
+    position: absolute;
+    right: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #764ba2;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+  }
+  
+  .google-btn {
+    margin-top: 20px;
+  }
+  
+  .google-btn button {
+    background-color: #4285f4;
+    border-radius: 8px;
+    color: white;   
+    font-size: 16px;
+   width: 50%; 
+}
+  
+  .submit-btn {
+    background-color: #764ba2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #5a3d92;
+  }
+  
+  .signup-link {
+    margin-top: 15px;
+    color: #777;
+  }
+  
+  .signup-link a {
+    color: #764ba2;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .signup-link a:hover {
+    color: #5a3d92;
+  }
+  
