@@ -1,14 +1,15 @@
-import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+// service/Firebase.js
+import { initializeApp } from 'firebase/app';
+import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBeFEsyJsTQoXDFOmiwFV97nTYNtnn6pSw",
-  authDomain: "authprojecterp.firebaseapp.com",
-  projectId: "authprojecterp",
-  storageBucket: "authprojecterp.appspot.com",
-  messagingSenderId: "851426911107",
-  appId: "1:851426911107:web:8fa693a779447056d80cb6",
-  measurementId: "G-E485BP7XW4"
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID",
+  measurementId: "YOUR_MEASUREMENT_ID"
 };
 
 const app = initializeApp(firebaseConfig);
